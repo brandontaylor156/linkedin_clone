@@ -6,13 +6,21 @@ import simon from './assets/images/banners/simon2.jpeg'
 import profile_pic from './assets/images/avatars/profile_pic.png'
 
 function Sidebar() {
+
+  const recentItem = (topic) => (
+    <div className="sidebar-recentItem">
+        <span className="sidebar-hash">#</span>
+        <p>{topic}</p>
+    </div>
+  )
+
   return (
     <div className="sidebar">
         <div className="sidebar-top">
             <img src={simon} alt="Sidebar banner" />
             <Avatar className="sidebar-avatar" src={profile_pic}/>
             <h2>Brandon Taylor</h2>
-            <h4>brandon.david4@outlook.com</h4>
+            <h4>brandon@outlook.com</h4>
         </div>
         <div className="sidebar-stats">
             <div className="sidebar-stat">
@@ -27,6 +35,11 @@ function Sidebar() {
 
         <div className="sidebar-bottom">
             <p>Recent</p>
+            {recentItem("reactjs")}
+            {recentItem("programming")}
+            {recentItem("softwareengineering")}
+            {recentItem("design")}
+            {recentItem("developer")}
         </div>
     </div>
   )
